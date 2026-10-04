@@ -116,7 +116,7 @@ css_bg = f"""
         border-radius: 18px;
         padding: 1.2rem 1.2rem !important;
         margin-top: 1rem;
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.5rem;
         margin-left: 1ch !important;
         margin-right: auto !important;
         box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
@@ -131,7 +131,7 @@ css_bg = f"""
         border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 18px;
         padding: 1rem 1.2rem !important;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         margin-left: 1ch !important;
         margin-right: auto !important;
         box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
@@ -141,15 +141,14 @@ css_bg = f"""
 """
 st.markdown(css_bg, unsafe_allow_html=True)
 
-# 1. CAJA DE DIÁLOGO: TÍTULO Y SUBTÍTULO ACTUALIZADO
+# 1. CAJA DE DIÁLOGO: TÍTULO, SUBTÍTULO Y LA NUEVA LÍNEA INFORMATIVA
 st.markdown("""
 <div class="titulo-box">
     <h3 style="margin:0; font-size:18px; font-weight:bold;">🌧 Pronóstico Lluvia (ECMWF & GFS) Costa Rica</h3>
-    <h4 style='color: #a0efc8; font-size: 12px; font-weight: 400; margin-top: 6px; margin-bottom: 0;'>⚠️ <i>Nota: Máximo 15 días (Open-Meteo API).</i></h4>
+    <h4 style='color: #a0efc8; font-size: 12px; font-weight: 400; margin-top: 6px; margin-bottom: 4px;'>⚠️ <i>Nota: Máximo 15 días (Open-Meteo API).</i></h4>
+    <p style='color: #ffffff; font-size: 11px; margin: 0; text-shadow: 0px 1px 3px rgba(0,0,0,0.9);'>📌 <i>Al dar clic sobre el mapa se despliega la lluvia acumulada de ambos modelos.</i></p>
 </div>
 """, unsafe_allow_html=True)
-
-st.write("") # Líneas de separación solicitadas
 
 # 2. CAJA DE DIÁLOGO: CONTROLES (SELECTOR Y BOTONES EN UNA SOLA LÍNEA)
 with st.container():
@@ -172,8 +171,6 @@ with st.container():
             st.rerun()
             
     st.markdown('</div>', unsafe_allow_html=True)
-
-st.markdown("---")
 
 # ==========================================
 # LÓGICA PRINCIPAL (INTACTA)
