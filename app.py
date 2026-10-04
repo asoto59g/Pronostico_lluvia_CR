@@ -27,10 +27,10 @@ def get_base64_of_bin_file(bin_file):
         return base64.b64encode(data).decode()
     return ""
 
-# Cargar la imagen proporcionada
+# Cargar la imagen proporcionada de la selva tropical
 img_base64 = get_base64_of_bin_file("Panorama de selva tropical lluviosa.png")
 
-# Inyección de CSS dinámico usando f-string (se usan dobles llaves {{ }} para escapar el CSS)
+# Inyección de CSS dinámico optimizado para mayor transparencia y ancho exacto
 css_bg = f"""
 <style>
     /* Imagen de fondo inyectada en base64, escalable para PC y teléfono */
@@ -45,12 +45,12 @@ css_bg = f"""
         -o-background-size: cover;
     }}
     
-    /* Oscurecer un poco el fondo para que el texto resalte sobre la selva */
+    /* Oscurecer muy levemente el fondo para mantener claridad */
     .stApp::before {{
         content: "";
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(10, 20, 15, 0.35); /* Tono ligeramente verdoso/oscuro */
+        background: rgba(5, 15, 10, 0.25);
         z-index: -1;
     }}
 
@@ -60,29 +60,33 @@ css_bg = f"""
         text-shadow: 0px 2px 5px rgba(0,0,0,0.9);
     }}
 
-    /* Botones transparentes con bordes neón */
+    /* Ajustar botones al ancho del texto, con mayor transparencia y bordes delicados */
     .stButton > button {{
-        background: rgba(10, 30, 20, 0.4) !important;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(0, 255, 150, 0.5) !important;
-        border-radius: 20px !important;
+        width: auto !important;
+        display: inline-block !important;
+        padding: 0.4rem 1rem !important;
+        background: rgba(10, 30, 20, 0.25) !important;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(0, 255, 150, 0.4) !important;
+        border-radius: 16px !important;
         color: #ffffff !important;
-        box-shadow: 0 4px 15px rgba(0, 255, 150, 0.15) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
         transition: all 0.3s ease !important;
         font-weight: bold !important;
+        font-size: 13px !important;
     }}
     
     .stButton > button:hover {{
         background: rgba(0, 255, 150, 0.2) !important;
-        border: 1px solid rgba(0, 255, 150, 1) !important;
-        box-shadow: 0 4px 20px rgba(0, 255, 150, 0.4) !important;
+        border: 1px solid rgba(0, 255, 150, 0.9) !important;
+        box-shadow: 0 4px 20px rgba(0, 255, 150, 0.3) !important;
         transform: translateY(-2px);
     }}
 
-    /* Cajas de input numérico traslúcidas */
+    /* Cajas de input numérico muy transparentes y ajustadas */
     .stNumberInput input {{
-        background-color: rgba(10, 30, 20, 0.5) !important;
+        background-color: rgba(10, 30, 20, 0.3) !important;
         color: #00ffaa !important;
         border: 1px solid rgba(0, 255, 150, 0.3) !important;
         border-radius: 12px !important;
@@ -94,46 +98,50 @@ css_bg = f"""
         box-shadow: 0 0 10px rgba(0, 255, 150, 0.3) !important;
     }}
 
-    /* Ocultar barra superior y pie de página de Streamlit */
+    /* Ocultar elementos por defecto de Streamlit */
     #MainMenu {{visibility: hidden;}}
     footer {{visibility: hidden;}}
     header {{background: transparent !important;}}
     
-    /* Contenedor principal de Streamlit convertido en un panel cristalino */
+    /* Contenedor principal de título con ancho reducido exactamente hasta la referencia solicitada (Open-Meteo API) */
     .block-container {{
-        background: rgba(15, 25, 20, 0.45);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        background: rgba(15, 25, 20, 0.3);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 25px;
-        padding: 3rem 2rem !important;
-        margin-top: 2rem;
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+        border-radius: 20px;
+        padding: 1.5rem 1.5rem !important;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        margin-left: 1ch !important;
+        margin-right: auto !important;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+        max-width: 680px !important; /* Ancho delimitado al texto de referencia */
     }}
 </style>
 """
 st.markdown(css_bg, unsafe_allow_html=True)
 
-# Título y Subtítulo adaptados al tema oscuro
-st.title("🌧️️ Pronóstico Lluvia (ECMWF & GFS) Costa Rica")
-st.markdown("<h4 style='color: #a0efc8; font-size: 15px; font-weight: 400;'>⚠️ <i>Nota: El pronóstico máximo es de 15 días. El cálculo espacial requiere un poco de paciencia.</i></h4>", unsafe_allow_html=True)
+# Título y Subtítulo compactos adaptados al ancho restringido
+st.title("🌧 Pronóstico Lluvia (ECMWF & GFS)")
+st.markdown("<h4 style='color: #a0efc8; font-size: 13px; font-weight: 400; margin-bottom: 8px;'>⚠️ <i>Nota: Máximo 15 días (Open-Meteo API).</i></h4>", unsafe_allow_html=True)
 st.write("")
 
-# Controles de Interfaz
-col1, col2, col3, col4 = st.columns([1.5, 1, 1, 2])
+# Controles de Interfaz distribuidos de forma compacta y transparente
+col1, col2, col3 = st.columns([1.2, 1, 1])
 
 with col1:
-    dias_input = st.number_input("Días a acumular:", min_value=1, max_value=15, value=15, step=1)
+    dias_input = st.number_input("Días:", min_value=1, max_value=15, value=15, step=1)
 
 with col2:
     st.write("") 
     st.write("")
-    btn_ejecutar = st.button("🚀 Procesar Mapa", use_container_width=True)
+    btn_ejecutar = st.button("🚀 Procesar")
 
 with col3:
     st.write("")
     st.write("")
-    if st.button("🔄 Reiniciar", use_container_width=True):
+    if st.button("🔄 Reiniciar"):
         st.rerun()
 
 st.markdown("---")
