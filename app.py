@@ -30,7 +30,7 @@ def get_base64_of_bin_file(bin_file):
 # Cargar la imagen proporcionada de la selva tropical
 img_base64 = get_base64_of_bin_file("Panorama de selva tropical lluviosa.png")
 
-# Inyección de CSS dinámico optimizado para mayor transparencia y ancho exacto
+# Inyección de CSS dinámico para máxima transparencia, cajas separadas y controles compactos
 css_bg = f"""
 <style>
     /* Imagen de fondo inyectada en base64, escalable para PC y teléfono */
@@ -45,12 +45,12 @@ css_bg = f"""
         -o-background-size: cover;
     }}
     
-    /* Oscurecer muy levemente el fondo para mantener claridad */
+    /* Fondo muy claro para apreciar la selva en móviles */
     .stApp::before {{
         content: "";
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(5, 15, 10, 0.25);
+        background: rgba(5, 15, 10, 0.15);
         z-index: -1;
     }}
 
@@ -60,89 +60,119 @@ css_bg = f"""
         text-shadow: 0px 2px 5px rgba(0,0,0,0.9);
     }}
 
-    /* Ajustar botones al ancho del texto, con mayor transparencia y bordes delicados */
+    /* Estilo de botones compactos adaptados al texto */
     .stButton > button {{
         width: auto !important;
         display: inline-block !important;
-        padding: 0.4rem 1rem !important;
-        background: rgba(10, 30, 20, 0.25) !important;
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(0, 255, 150, 0.4) !important;
-        border-radius: 16px !important;
+        padding: 0.35rem 0.9rem !important;
+        background: rgba(10, 30, 20, 0.2) !important;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border: 1px solid rgba(0, 255, 150, 0.35) !important;
+        border-radius: 14px !important;
         color: #ffffff !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
         transition: all 0.3s ease !important;
         font-weight: bold !important;
-        font-size: 13px !important;
+        font-size: 12px !important;
+        white-space: nowrap !important;
     }}
     
     .stButton > button:hover {{
-        background: rgba(0, 255, 150, 0.2) !important;
-        border: 1px solid rgba(0, 255, 150, 0.9) !important;
-        box-shadow: 0 4px 20px rgba(0, 255, 150, 0.3) !important;
+        background: rgba(0, 255, 150, 0.25) !important;
+        border: 1px solid rgba(0, 255, 150, 0.8) !important;
         transform: translateY(-2px);
     }}
 
-    /* Cajas de input numérico muy transparentes y ajustadas */
+    /* Reducir el ancho del selector numérico a la mitad */
+    .stNumberInput {{
+        max-width: 110px !important;
+    }}
+
     .stNumberInput input {{
-        background-color: rgba(10, 30, 20, 0.3) !important;
+        background-color: rgba(10, 30, 20, 0.2) !important;
         color: #00ffaa !important;
         border: 1px solid rgba(0, 255, 150, 0.3) !important;
-        border-radius: 12px !important;
+        border-radius: 10px !important;
         font-weight: bold;
+        text-align: center;
     }}
     
     .stNumberInput input:focus {{
         border: 1px solid rgba(0, 255, 150, 1) !important;
-        box-shadow: 0 0 10px rgba(0, 255, 150, 0.3) !important;
     }}
 
-    /* Ocultar elementos por defecto de Streamlit */
+    /* Ocultar elementos predeterminados de Streamlit */
     #MainMenu {{visibility: hidden;}}
     footer {{visibility: hidden;}}
     header {{background: transparent !important;}}
     
-    /* Contenedor principal de título con ancho reducido exactamente hasta la referencia solicitada (Open-Meteo API) */
-    .block-container {{
-        background: rgba(15, 25, 20, 0.3);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 20px;
-        padding: 1.5rem 1.5rem !important;
-        margin-top: 1.5rem;
+    /* Contenedor principal ultra transparente para el Título y Subtítulo */
+    .titulo-box {{
+        background: rgba(15, 25, 20, 0.15);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        padding: 1.2rem 1.2rem !important;
+        margin-top: 1rem;
+        margin-bottom: 0.8rem;
+        margin-left: 1ch !important;
+        margin-right: auto !important;
+        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+        max-width: 540px !important;
+    }}
+
+    /* Contenedor ultra transparente para el Selector y los Botones */
+    .controles-box {{
+        background: rgba(15, 25, 20, 0.15);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        padding: 1rem 1.2rem !important;
         margin-bottom: 1.5rem;
         margin-left: 1ch !important;
         margin-right: auto !important;
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
-        max-width: 680px !important; /* Ancho delimitado al texto de referencia */
+        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+        max-width: 540px !important;
     }}
 </style>
 """
 st.markdown(css_bg, unsafe_allow_html=True)
 
-# Título y Subtítulo compactos adaptados al ancho restringido
-st.title("🌧 Pronóstico Lluvia (ECMWF & GFS)")
-st.markdown("<h4 style='color: #a0efc8; font-size: 13px; font-weight: 400; margin-bottom: 8px;'>⚠️ <i>Nota: Máximo 15 días (Open-Meteo API).</i></h4>", unsafe_allow_html=True)
-st.write("")
+# 1. CAJA DE DIÁLOGO: TÍTULO Y SUBTÍTULO
+st.markdown("""
+<div class="titulo-box">
+    <h3 style="margin:0; font-size:18px; font-weight:bold;">🌧 Pronóstico Lluvia (ECMWF & GFS)</h3>
+    <h4 style='color: #a0efc8; font-size: 12px; font-weight: 400; margin-top: 6px; margin-bottom: 0;'>⚠️ <i>Nota: Máximo 15 días (Open-Meteo API).</i></h4>
+</div>
+""", unsafe_allow_html=True)
 
-# Controles de Interfaz distribuidos de forma compacta y transparente
-col1, col2, col3 = st.columns([1.2, 1, 1])
+st.write("") # Líneas de separación solicitadas
 
-with col1:
-    dias_input = st.number_input("Días:", min_value=1, max_value=15, value=15, step=1)
+# 2. CAJA DE DIÁLOGO: CONTROLES (SELECTOR Y BOTONES EN UNA SOLA LÍNEA)
+with st.container():
+    st.markdown('<div class="controles-box">', unsafe_allow_html=True)
+    
+    # Distribución en columnas compactas para que entren en una sola línea
+    col_sel, col_btn1, col_btn2 = st.columns([1.1, 1, 1], gap="small")
 
-with col2:
-    st.write("") 
-    st.write("")
-    btn_ejecutar = st.button("🚀 Procesar")
+    with col_sel:
+        dias_input = st.number_input("Días:", min_value=1, max_value=15, value=15, step=1)
 
-with col3:
-    st.write("")
-    st.write("")
-    if st.button("🔄 Reiniciar"):
-        st.rerun()
+    with col_btn1:
+        st.write("") # Alineación visual con respecto al input
+        st.write("")
+        btn_ejecutar = st.button("🚀 Procesar")
+
+    with col_btn2:
+        st.write("") 
+        st.write("")
+        if st.button("🔄 Reiniciar"):
+            st.rerun()
+            
+    st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("---")
 
