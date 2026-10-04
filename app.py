@@ -138,24 +138,24 @@ css_bg = f"""
         max-width: 580px !important;
     }}
 
-    /* Tiritas decorativas más cerca de las esquinas superiores */
+    /* Tirita de Guanacaste limpia en el borde superior azul */
     .corner-ribbon-left {{
         position: fixed;
         top: 12px;
         left: -42px;
         width: 150px;
         height: 32px;
-        background: linear-gradient(to bottom, #0055a5 33%, #ffffff 33%, #ffffff 66%, #009639 66%);
+        background: linear-gradient(to bottom, #0055a5 33.33%, #ffffff 33.33%, #ffffff 66.66%, #009639 66.66%);
         transform: rotate(-45deg);
         text-align: center;
         box-shadow: 0 3px 10px rgba(0,0,0,0.5);
         z-index: 99999;
         pointer-events: none;
-        border-top: 1px solid rgba(255,255,255,0.4);
+        border-top: none;
         border-bottom: 1px solid rgba(0,0,0,0.4);
     }}
 
-    /* Triángulo rojo de Guanacaste mucho más amplio y pronunciado */
+    /* Triángulo rojo de Guanacaste amplio y bien definido */
     .corner-ribbon-left::before {{
         content: "";
         position: absolute;
@@ -169,7 +169,7 @@ css_bg = f"""
         z-index: 2;
     }}
 
-    /* Bandera de Costa Rica con la franja roja al doble de grosor (1:1:2:1:1) */
+    /* Bandera de Costa Rica (1:1:2:1:1) */
     .corner-ribbon-right {{
         position: fixed;
         top: 12px;
