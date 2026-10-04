@@ -169,13 +169,21 @@ css_bg = f"""
         z-index: 2;
     }}
 
+    /* Bandera de Costa Rica con la franja roja al doble de grosor (1:1:2:1:1) */
     .corner-ribbon-right {{
         position: fixed;
         top: 12px;
         right: -42px;
         width: 150px;
         height: 32px;
-        background: linear-gradient(to bottom, #002b7f 20%, #ffffff 20%, #ffffff 40%, #ce1126 40%, #ce1126 60%, #ffffff 60%, #ffffff 80%, #002b7f 80%);
+        background: linear-gradient(
+            to bottom, 
+            #002b7f 0%, #002b7f 16.66%, 
+            #ffffff 16.66%, #ffffff 33.33%, 
+            #ce1126 33.33%, #ce1126 66.66%, 
+            #ffffff 66.66%, #ffffff 83.33%, 
+            #002b7f 83.33%, #002b7f 100%
+        );
         transform: rotate(45deg);
         text-align: center;
         box-shadow: 0 3px 10px rgba(0,0,0,0.5);
