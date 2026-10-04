@@ -30,7 +30,7 @@ def get_base64_of_bin_file(bin_file):
 # Cargar la imagen proporcionada de la selva tropical
 img_base64 = get_base64_of_bin_file("Panorama de selva tropical lluviosa.png")
 
-# Inyección de CSS dinámico para máxima transparencia, cajas separadas y controles compactos
+# Inyección de CSS dinámico incluyendo las tiritas decorativas de graduación
 css_bg = f"""
 <style>
     /* Imagen de fondo inyectada en base64, escalable para PC y teléfono */
@@ -109,13 +109,14 @@ css_bg = f"""
     
     /* Contenedor principal ultra transparente para el Título y Subtítulo */
     .titulo-box {{
+        position: relative;
         background: rgba(15, 25, 20, 0.15);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
         border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 18px;
         padding: 1.2rem 1.2rem !important;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         margin-bottom: 0.5rem;
         margin-left: 1ch !important;
         margin-right: auto !important;
@@ -137,13 +138,40 @@ css_bg = f"""
         box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
         max-width: 580px !important;
     }}
+
+    /* Tiritas tipo sujetador de portatítulos de graduación */
+    .ribbon-guanacaste {{
+        position: absolute;
+        top: -16px;
+        left: 40px;
+        width: 16px;
+        height: 38px;
+        background: linear-gradient(to right, #009639 33%, #ffffff 33%, #ffffff 66%, #0055a5 66%);
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+        z-index: 10;
+    }}
+
+    .ribbon-costarica {{
+        position: absolute;
+        top: -16px;
+        right: 40px;
+        width: 16px;
+        height: 38px;
+        background: linear-gradient(to right, #002b7f 20%, #ffffff 20%, #ffffff 40%, #ce1126 40%, #ce1126 60%, #ffffff 60%, #ffffff 80%, #002b7f 80%);
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+        z-index: 10;
+    }}
 </style>
 """
 st.markdown(css_bg, unsafe_allow_html=True)
 
-# 1. CAJA DE DIÁLOGO: TÍTULO, SUBTÍTULO Y LA NUEVA LÍNEA INFORMATIVA
+# 1. CAJA DE DIÁLOGO: TÍTULO, SUBTÍTULO, LÍNEA INFORMATIVA Y LAS TIRITAS DECORATIVAS
 st.markdown("""
 <div class="titulo-box">
+    <div class="ribbon-guanacaste" title="Bandera de Guanacaste"></div>
+    <div class="ribbon-costarica" title="Bandera de Costa Rica"></div>
     <h3 style="margin:0; font-size:18px; font-weight:bold;">🌧 Pronóstico Lluvia (ECMWF & GFS) Costa Rica</h3>
     <h4 style='color: #a0efc8; font-size: 12px; font-weight: 400; margin-top: 6px; margin-bottom: 4px;'>⚠️ <i>Nota: Máximo 15 días (Open-Meteo API).</i></h4>
     <p style='color: #ffffff; font-size: 11px; margin: 0; text-shadow: 0px 1px 3px rgba(0,0,0,0.9);'>📌 <i>Al dar clic sobre el mapa se despliega la lluvia acumulada de ambos modelos.</i></p>
