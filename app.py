@@ -138,28 +138,24 @@ css_bg = f"""
         max-width: 580px !important;
     }}
 
-    /* Tiritas decorativas en las esquinas superiores a 45° (Guanacaste izquierda, Costa Rica derecha) */
+    /* Tiritas decorativas más cerca de las esquinas superiores */
     .corner-ribbon-left {{
         position: fixed;
-        top: 25px;
-        left: -35px;
-        width: 140px;
-        height: 28px;
+        top: 12px;
+        left: -42px;
+        width: 150px;
+        height: 32px;
         background: linear-gradient(to bottom, #0055a5 33%, #ffffff 33%, #ffffff 66%, #009639 66%);
         transform: rotate(-45deg);
         text-align: center;
-        font-size: 10px;
-        font-weight: bold;
-        color: #fff;
-        line-height: 28px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.5);
         z-index: 99999;
         pointer-events: none;
         border-top: 1px solid rgba(255,255,255,0.4);
         border-bottom: 1px solid rgba(0,0,0,0.4);
     }}
 
-    /* Simulación visual del triángulo rojo de Guanacaste en la esquina izquierda */
+    /* Triángulo rojo de Guanacaste mucho más amplio y pronunciado */
     .corner-ribbon-left::before {{
         content: "";
         position: absolute;
@@ -167,25 +163,22 @@ css_bg = f"""
         left: 0;
         width: 0;
         height: 0;
-        border-top: 14px solid transparent;
-        border-bottom: 14px solid transparent;
-        border-left: 24px solid #ce1126;
+        border-top: 16px solid transparent;
+        border-bottom: 16px solid transparent;
+        border-left: 55px solid #ce1126;
+        z-index: 2;
     }}
 
     .corner-ribbon-right {{
         position: fixed;
-        top: 25px;
-        right: -35px;
-        width: 140px;
-        height: 28px;
+        top: 12px;
+        right: -42px;
+        width: 150px;
+        height: 32px;
         background: linear-gradient(to bottom, #002b7f 20%, #ffffff 20%, #ffffff 40%, #ce1126 40%, #ce1126 60%, #ffffff 60%, #ffffff 80%, #002b7f 80%);
         transform: rotate(45deg);
         text-align: center;
-        font-size: 10px;
-        font-weight: bold;
-        color: #fff;
-        line-height: 28px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.5);
         z-index: 99999;
         pointer-events: none;
         border-top: 1px solid rgba(255,255,255,0.4);
