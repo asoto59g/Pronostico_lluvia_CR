@@ -1,0 +1,139 @@
+Indice;Nombre;Latitud;Longitud;Altitud_msnm;Region
+1;Aeropuerto Daniel Oduber ;10.588889;-85.552222;78;Pacifico Norte
+2; Aeropuerto Daniel Oduber;10.593333;-85.537778;82;Pacifico Norte
+3;Pithaya, Puntarenas, Punt;10.057889;-84.806944;30;Pacifico Norte
+4;Sardinal de Carrillo en G;10.506667;-85.696028;65;Pacifico Norte
+5;Guayabo en la Fortuna de ;10.715;-85.201111;532;Pacifico Norte
+6;Hojancha en Guanacaste;10.031944;-85.405833;374;Pacifico Norte
+7;Santa Marta de Hojancha e;9.929722;-85.430278;100;Pacifico Norte
+8;Barco Quebradero;9.916111;-85.614444;24;Pacifico Norte
+9;Huacalito de Filadelfia e;10.393056;-85.412778;65;Pacifico Norte
+10;Coopeguanacaste, Bijagua ;10.753167;-85.055583;435;Pacifico Norte
+11;Copalchí, La Cruz, Guanac;11.200028;-85.618583;58;Pacifico Norte
+12;Dulce Nombre, Nicoya, Gua;10.095833;-85.478333;180;Pacifico Norte
+13;Palo Verde en Bagaces, Gu;10.3475;-85.351111;10;Pacifico Norte
+14;Finca la Ceiba, Nicoya, G;10.111361;-85.317611;64;Pacifico Norte
+15;Guayabal Mastate, Orotina;9.9175;-84.585278;185;Pacifico Norte
+16;Hacienda Mojica, Bagaces,;10.452778;-85.165278;33;Pacifico Norte
+17;Hacienda Taboga, Cañas, G;10.345833;-85.1775;29;Pacifico Norte
+18;la Cruz de Guanacaste;11.054583;-85.633056;241;Pacifico Norte
+19;Mangarica, Liberia Guanac;10.605556;-85.45;134;Pacifico Norte
+20;"el Volcán Orosi;, La Cruz";10.958778;-85.49575;573;Pacifico Norte
+21;Ingenio el Viejo, Filadel;10.419167;-85.473333;87;Pacifico Norte
+22;Nicoya, Guanacaste;10.145556;-85.451944;130;Pacifico Norte
+23;Oroceiba, Orotina, Alajue;9.896667;-84.6;133;Pacifico Norte
+24;Palo Alto, Montezuma, Cañ;10.664611;-85.080417;467;Pacifico Norte
+25;Paquera, Puntarenas;9.821389;-84.938333;39;Pacifico Norte
+26;Sitio el Aromal, Bagaces,;10.395;-85.324444;18;Pacifico Norte
+27;Refugio Nacional de Vida ;10.211944;-85.234444;3;Pacifico Norte
+28;Hacienda Pinilla;10.260083;-85.837778;29;Pacifico Norte
+29;San Mateo, Alajuela;9.931667;-84.519167;214;Pacifico Norte
+30;Santa Cecilia, La Cruz, G;11.075167;-85.453444;314;Pacifico Norte
+31;Santa Elena, La Cruz, Gua;10.919972;-85.610667;282;Pacifico Norte
+32;Santa Rita de Nandayure G;10.018889;-85.261944;46;Pacifico Norte
+33;Santa Rosa Guanacaste;10.841111;-85.619444;301;Pacifico Norte
+34;Sitio La Cruz, Bagaces, G;10.483056;-85.414167;20;Pacifico Norte
+35;Universidad Invenio, Caña;10.476611;-85.059778;321;Pacifico Norte
+36;la UCR Santa Cruz, Guanac;10.285556;-85.591667;41;Pacifico Norte
+37;Arunachala, Pérez Zeledón;9.409917;-83.83225;1012;Pacifico Central
+38;Asada San Gabriel, Desamp;9.783833;-84.096306;1525;Pacifico Central
+39;Cerro Buena Vista de Pére;9.56;-83.753611;3400;Pacifico Central
+40;El Rodeo, Tarrazú, San Jo;9.676222;-84.018417;1647;Pacifico Central
+41;Finca Damas, Quepos, Punt;9.495278;-84.214722;12;Pacifico Central
+42;Ligia, Parrita, Puntarena;9.512778;-84.333611;6;Pacifico Central
+43;la Lucha, León Cortés, Sa;9.736667;-84.000556;1740;Pacifico Central
+44;Marina Pez Vela, Quepos;9.426111;-84.170833;3;Pacifico Central
+45;Herradura, Garabito, Punt;9.65025;-84.666472;6;Pacifico Central
+46; Parque Nacional la Amist;9.029167;-83.007778;1370;Pacifico Sur
+47;Cafetalera Giro San Vito,;8.818056;-82.971111;1011;Pacifico Sur
+48;San Vito, Coto Brus;8.832778;-82.952778;1015;Pacifico Sur
+49;Chirripó, Pérez Zeledón, ;9.458333;-83.508139;3440;Pacifico Sur
+50;Coto 49, Corredores, Punt;8.631194;-82.966861;19;Pacifico Sur
+51;Puerto Jiménez, Golfito, ;8.600972;-83.431167;19;Pacifico Sur
+52;la Fundación Neotrópica, ;8.700806;-83.514167;66;Pacifico Sur
+53;Las Brisas, Coto Brus, Pu;8.877361;-82.891;1056;Pacifico Sur
+54;Laurel, Corredores, Punta;8.471611;-82.860611;25;Pacifico Sur
+55;Montecarlo, Pérez Zeledón;9.358139;-83.601056;975;Pacifico Sur
+56;Museo Las Esferas, Sierpe;8.910639;-83.479333;9;Pacifico Sur
+57;Pindeco, Buenos Aires, Pu;9.146222;-83.335;386;Pacifico Sur
+58;Greg Gund, Golfito, Punta;8.411222;-83.320444;235;Pacifico Sur
+59;Río Claro, Golfito, Punta;8.674056;-83.062056;31;Pacifico Sur
+60;ADIFORT en la Fortuna de ;10.4675;-84.646944;266;Zona Norte
+61;Aeródromo Zona Norte, San;10.493;-84.421194;76;Zona Norte
+62;San Rafael de Guatuso de ;10.686111;-84.910278;160;Zona Norte
+63;Balsa, San Ramón, Alajuel;10.174444;-84.496944;1113;Zona Norte
+64;Betania, Cutris, San Carl;10.644472;-84.382083;89;Zona Norte
+65;Comando Sarapiquí, Sarapi;10.445139;-84.005056;48;Zona Norte
+66;El Bosque, Río Tirimbina,;10.417222;-84.125361;200;Zona Norte
+67;Finca Brasilia del Oro, U;10.98325;-85.347222;381;Zona Norte
+68;Hidroeléctrica El General;10.203639;-83.933167;483;Zona Norte
+69;Horquetas de Sarapiquí, H;10.309361;-83.946278;121;Zona Norte
+70;Hotel Pozo Azul, Sarapiqu;10.385806;-84.139556;208;Zona Norte
+71;Hotel Villa Blanca, San R;10.202778;-84.483889;1125;Zona Norte
+72;TEC, Sede Santa Clara, Sa;10.360611;-84.513444;167;Zona Norte
+73;Finca la Rebusca, Puerto ;10.474528;-84.009111;40;Zona Norte
+74;En el Volcán Poás, Alajue;10.189167;-84.231667;2598;Zona Norte
+75;Las Delicias en San Carlo;10.444167;-84.315;140;Zona Norte
+76;los Chiles de Alajuela;11.031611;-84.711528;40;Zona Norte
+77;San Gerardo, La Virgen de;10.415944;-84.158083;178;Zona Norte
+78;San Vicente, Ciudad Quesa;10.279722;-84.394444;1431;Zona Norte
+79;Upala, Alajuela;10.880833;-85.0725;60;Zona Norte
+80;Volcán Tenorio, Guatuso, ;10.715556;-84.986944;680;Zona Norte
+81; Tiempo Aeropuerto Juan S;9.989167;-84.218333;897;Valle Central
+82;Aeropuerto Juan Santamarí;9.995278;-84.201944;917;Valle Central
+83;Aeropuerto Tobías Bolaños;9.957306;-84.147667;997;Valle Central
+84;Alfredo Volio en Cartago;9.908611;-83.954778;1592;Valle Central
+85;Barrancas, El Guarco, Car;9.838264;-83.963389;1400;Valle Central
+86;Belén, Heredia;9.975;-84.185556;926;Valle Central
+87;Biblioteca RAAG, Municipa;9.912778;-84.058056;1200;Valle Central
+88;El Burío, Aserrí, San Jos;9.840278;-84.1125;1811;Valle Central
+89;Cerro Cedral, Escazú, San;9.861417;-84.145889;2255;Valle Central
+90;Cerro Chitaria, Santa Ana;9.891667;-84.193694;1717;Valle Central
+91;Cerro Juco de Orosi en Pa;9.775417;-83.86475;1735;Valle Central
+92;CIGEFI en Montes de Oca, ;9.936389;-84.045278;1210;Valle Central
+93;Ciudad de los Niños, Para;9.834167;-83.921111;1338;Valle Central
+94;Ciudad Judicial, San Joaq;10.006944;-84.163889;1023;Valle Central
+95;Centro Recuperacion Resid;9.945403;-84.217172;830;Valle Central
+96;Linda Vista, Dulce Nombre;9.838553;-83.908275;1380;Valle Central
+97;Fabio Baudrit;10.005;-84.265556;840;Valle Central
+98;Finca Los Lotes, Unión, C;9.936208;-83.972425;1579;Valle Central
+99;Finca los Macayas, Goicoe;9.968611;-83.971278;1685;Valle Central
+100;el IMN en San José;9.937944;-84.069722;1172;Valle Central
+101;Instituto Tecnológico de ;9.852222;-83.908611;1360;Valle Central
+102;Iztarú Tres Rios Cartago;9.889528;-83.968944;1680;Valle Central
+103;Jaboncillal, Goichoechea,;9.955833;-83.981111;1643;Valle Central
+104;Laguna Fraijanes, Alajuel;10.137222;-84.193333;1740;Valle Central
+105;Llano Grande de Cartago;9.945444;-83.921722;2220;Valle Central
+106;Volcán Poás, Alajuela;10.189167;-84.231667;2598;Valle Central
+107;Pacayas, Alvarado, Cartag;9.915333;-83.804806;1712;Valle Central
+108;Patio de Agua, Vásquez de;9.976944;-83.97;1690;Valle Central
+109;Plantel, Municipalidad de;9.930278;-84.093333;1137;Valle Central
+110;RECOPE La Garita, Alajuel;10.005278;-84.295833;740;Valle Central
+111;Recope, Ochomogo, Cartago;9.894444;-83.938725;1546;Valle Central
+112;Residencial Paraíso, Muni;9.927944;-84.20675;932;Valle Central
+113;Santa Bárbara de Heredia;10.033333;-84.165833;1070;Valle Central
+114;Santa Lucía, UNA Heredia;10.023;-84.11175;1257;Valle Central
+115;Potrero Cerrado, Sartalil;9.902222;-83.885833;1943;Valle Central
+116;Universidad de la Paz, Mo;9.920278;-84.272778;818;Valle Central
+117;UTN, Atenas, Alajuela;9.935556;-84.379806;437;Valle Central
+118; Volcán Irazú, Alvarado, ;9.98;-83.837806;3331;Valle Central
+119;Canta Gallo, Cariari, Lim;10.496944;-83.671306;31;Caribe Norte
+120;Caramba Farms, Roxana, Po;10.268611;-83.746389;113;Caribe Norte
+121;La Earth;10.212778;-83.76125;10;Caribe Norte
+122;Fruta de Pan, Guápiles, L;10.197603;-83.857508;294;Caribe Norte
+123;Finca Diamantes, Guápiles;10.211722;-83.771972;262;Caribe Norte
+124;Rain Forest, Braulio Carr;10.175944;-83.917917;516;Caribe Norte
+125;Aeropuerto de Limón;9.961944;-83.025278;5;Caribe Sur
+126;CATIE, Turrialba, Cartago;9.891389;-83.653056;610;Caribe Sur
+127;CTP La Suiza, Turrialba, ;9.852067;-83.617053;616;Caribe Sur
+128;Gavilán Canta, Bratsi, Ta;9.594806;-83.026056;124;Caribe Sur
+129;Hitoy Cerere, Limón;9.673083;-83.024556;170;Caribe Sur
+130;Manzanillo, Talamanca, Li;9.6315;-82.661028;16;Caribe Sur
+131;Juan Viñas, Jiménez, Cart;9.896111;-83.748167;1181;Caribe Sur
+132;Maria Luisa, Río Banano, ;9.894194;-83.107111;84;Caribe Sur
+133;Monumento Nacional Guayab;9.969444;-83.689167;1105;Caribe Sur
+134;Puerto Vargas Talamanca, ;9.731667;-82.815;10;Caribe Sur
+135;Sitio Matas, Turrialba, C;9.879167;-83.625833;848;Caribe Sur
+136;Sixaola, Talamanca, Limón;9.5275;-82.633611;99;Caribe Sur
+137;Turrialba, Cartago;9.91;-83.678889;630;Caribe Sur
+138;Volcán Turrialba, Turrial;10.019167;-83.756389;3343;Caribe Sur
