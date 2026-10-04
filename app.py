@@ -3,6 +3,7 @@ import streamlit.components.v1 as components
 import json
 import urllib.request
 from datetime import datetime
+import pytz
 import numpy as np
 import pandas as pd
 import folium
@@ -236,7 +237,8 @@ with st.container():
 if btn_ejecutar:
     with st.spinner(f"Consultando la API para {dias_input} días y calculando la interpolación IDW..."):
         DIAS = dias_input
-        FECHA_EJECUCION = datetime.now().strftime("%d/%m/%Y")
+        tz_cr = pytz.timezone('America/Costa_Rica')
+        FECHA_EJECUCION = datetime.now(tz_cr).strftime("%d/%m/%Y %I:%M %p")
 
         try:
             df_est = pd.read_csv('EstIMN.csv', sep=';', encoding='latin1')
@@ -412,7 +414,8 @@ if btn_ejecutar:
             
             <div id="contenido-titulo" style="font-size:11px; color:#555; line-height:1.3;">
                 <b>Emisión:</b> {FECHA_EJECUCION}<br>
-                <b>Fuente:</b> Open-Meteo API (ECMWF & GFS)
+                <b>Fuente:</b> Open-Meteo API (ECMWF & GFS)<br>
+                Los modelos se actualizan cada 6 horas
                 
                 <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid #eee;">
                     <label for="opacity-slider" style="font-weight:bold; color:#333;">
