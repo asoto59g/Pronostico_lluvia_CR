@@ -84,9 +84,9 @@ css_bg = f"""
         transform: translateY(-2px);
     }}
 
-    /* Reducir el ancho del selector numérico a la mitad */
+    /* Ancho adaptado para el selector numérico con etiqueta más larga */
     .stNumberInput {{
-        max-width: 110px !important;
+        max-width: 140px !important;
     }}
 
     .stNumberInput input {{
@@ -203,7 +203,7 @@ st.markdown(css_bg, unsafe_allow_html=True)
 st.markdown("""
 <div class="titulo-box">
     <h3 style="margin:0; font-size:18px; font-weight:bold;">🌧 Pronóstico Lluvia (ECMWF & GFS) Costa Rica</h3>
-    <h4 style='color: #a0efc8; font-size: 12px; font-weight: 400; margin-top: 6px; margin-bottom: 4px;'>⚠️ <i>Nota: Máximo 15 días (Open-Meteo API).</i></h4>
+    <h4 style='color: #a0efc8; font-size: 12px; font-weight: 400; margin-top: 6px; margin-bottom: 4px;'>⚠️ <i>Nota: Lluvia acumulada en mm. Maximo 15 dias (Open Meteo API)</i></h4>
     <p style='color: #ffffff; font-size: 11px; margin: 0; text-shadow: 0px 1px 3px rgba(0,0,0,0.9);'>📌 <i>Al dar clic sobre el mapa se despliega la lluvia acumulada de ambos modelos.</i></p>
 </div>
 """, unsafe_allow_html=True)
@@ -212,10 +212,10 @@ st.markdown("""
 with st.container():
     st.markdown('<div class="controles-box">', unsafe_allow_html=True)
     
-    col_sel, col_btn1, col_btn2 = st.columns([1.1, 1, 1], gap="small")
+    col_sel, col_btn1, col_btn2 = st.columns([1.3, 1, 1], gap="small")
 
     with col_sel:
-        dias_input = st.number_input("Días:", min_value=1, max_value=15, value=15, step=1)
+        dias_input = st.number_input("Días a procesar:", min_value=1, max_value=15, value=15, step=1)
 
     with col_btn1:
         st.write("") 
