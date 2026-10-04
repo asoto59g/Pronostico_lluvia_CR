@@ -120,7 +120,7 @@ css_bg = f"""
         margin-left: 1ch !important;
         margin-right: auto !important;
         box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
-        max-width: 540px !important;
+        max-width: 580px !important;
     }}
 
     /* Contenedor ultra transparente para el Selector y los Botones */
@@ -135,16 +135,16 @@ css_bg = f"""
         margin-left: 1ch !important;
         margin-right: auto !important;
         box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
-        max-width: 540px !important;
+        max-width: 580px !important;
     }}
 </style>
 """
 st.markdown(css_bg, unsafe_allow_html=True)
 
-# 1. CAJA DE DIÁLOGO: TÍTULO Y SUBTÍTULO
+# 1. CAJA DE DIÁLOGO: TÍTULO Y SUBTÍTULO ACTUALIZADO
 st.markdown("""
 <div class="titulo-box">
-    <h3 style="margin:0; font-size:18px; font-weight:bold;">🌧 Pronóstico Lluvia (ECMWF & GFS)</h3>
+    <h3 style="margin:0; font-size:18px; font-weight:bold;">🌧 Pronóstico Lluvia (ECMWF & GFS) Costa Rica</h3>
     <h4 style='color: #a0efc8; font-size: 12px; font-weight: 400; margin-top: 6px; margin-bottom: 0;'>⚠️ <i>Nota: Máximo 15 días (Open-Meteo API).</i></h4>
 </div>
 """, unsafe_allow_html=True)
@@ -155,14 +155,13 @@ st.write("") # Líneas de separación solicitadas
 with st.container():
     st.markdown('<div class="controles-box">', unsafe_allow_html=True)
     
-    # Distribución en columnas compactas para que entren en una sola línea
     col_sel, col_btn1, col_btn2 = st.columns([1.1, 1, 1], gap="small")
 
     with col_sel:
         dias_input = st.number_input("Días:", min_value=1, max_value=15, value=15, step=1)
 
     with col_btn1:
-        st.write("") # Alineación visual con respecto al input
+        st.write("") 
         st.write("")
         btn_ejecutar = st.button("🚀 Procesar")
 
