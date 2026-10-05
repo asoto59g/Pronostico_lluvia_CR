@@ -203,7 +203,7 @@ st.markdown(css_bg, unsafe_allow_html=True)
 # 1. CAJA DE DIÁLOGO: TÍTULO, SUBTÍTULO Y LÍNEA INFORMATIVA
 st.markdown("""
 <div class="titulo-box">
-    <h3 style="margin:0; font-size:18px; font-weight:bold;">🌧 Pronóstico Lluvia (ECMWF & GFS) Costa Rica</h3>
+    <h3 style="margin:0; font-size:18px; font-weight:bold;">🌧 Pronóstico Lluvia (ECMWF 9 Km & GFS 13 Km) Costa Rica</h3>
     <h4 style='color: #a0efc8; font-size: 12px; font-weight: 400; margin-top: 6px; margin-bottom: 4px;'>⚠️ <i>Nota: Lluvia acumulada en mm. Maximo 15 dias (Open Meteo API)</i></h4>
     <p style='color: #ffffff; font-size: 11px; margin: 0; text-shadow: 0px 1px 3px rgba(0,0,0,0.9);'>📌 <i>Al dar clic sobre el mapa se despliega la lluvia acumulada de ambos modelos.</i></p>
 </div>
