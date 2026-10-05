@@ -204,7 +204,7 @@ st.markdown(css_bg, unsafe_allow_html=True)
 st.markdown("""
 <div class="titulo-box">
     <h3 style="margin:0; font-size:18px; font-weight:bold;">🌧 Pronóstico Lluvia (ECMWF 9 Km & GFS 13 Km) Costa Rica</h3>
-    <h4 style='color: #a0efc8; font-size: 12px; font-weight: 400; margin-top: 6px; margin-bottom: 4px;'>⚠️ <i>Nota: Lluvia acumulada en mm. Maximo 15 dias (Open Meteo API)</i></h4>
+    <h4 style='color: #a0efc8; font-size: 12px; font-weight: 400; margin-top: 6px; margin-bottom: 4px;'>⚠️️ <i>Nota: Lluvia acumulada en mm. Maximo 15 dias (Open Meteo API)</i></h4>
     <p style='color: #ffffff; font-size: 11px; margin: 0; text-shadow: 0px 1px 3px rgba(0,0,0,0.9);'>📌 <i>Al dar clic sobre el mapa se despliega la lluvia acumulada de ambos modelos.</i></p>
 </div>
 """, unsafe_allow_html=True)
@@ -280,7 +280,6 @@ if btn_ejecutar:
                 with urllib.request.urlopen(req_g, timeout=10) as response_g:
                     data_g = json.loads(response_g.read().decode())
                     daily_g = data_g.get('daily', {})
-                    # Respaldo robusto para capturar la llave sin importar el formato devuelto
                     p_list_g = daily_g.get('precipitation_sum_gfs_global', daily_g.get('precipitation_sum', []))
                     precip_gfs = sum([p for p in p_list_g if p is not None])
             except Exception:
@@ -460,8 +459,9 @@ if btn_ejecutar:
             &lt;&lt; Capas
         </button>
 
-        <div style="position: fixed; bottom: 20px; right: 20px; width: 140px; z-index:9999; 
-                    background-color: white; padding: 8px 10px; border-radius: 8px; 
+        <!-- Cajetín de simbología más angosto y separado del borde derecho -->
+        <div style="position: fixed; bottom: 20px; right: 45px; width: 105px; z-index:9999; 
+                    background-color: white; padding: 6px 8px; border-radius: 8px; 
                     box-shadow: 0 0 10px rgba(0,0,0,0.3); font-family: Arial, sans-serif; font-size:11px; max-height:360px; overflow-y:auto;">
             <div style="font-weight:bold; font-size:11px; margin-bottom:4px; text-align:center;">Lluvia (mm)</div>
         """
@@ -469,8 +469,8 @@ if btn_ejecutar:
         for _, _, color, label in RANGOS_COLOR:
             html_panel += f"""
             <div style="display: flex; align-items: center; margin-bottom: 2px;">
-                <div style="width: 18px; height: 11px; background-color: {color}; border: 1px solid #666; margin-right: 6px;"></div>
-                <span>{label}</span>
+                <div style="width: 14px; height: 11px; background-color: {color}; border: 1px solid #666; margin-right: 4px; flex-shrink: 0;"></div>
+                <span style="white-space: nowrap;">{label}</span>
             </div>
             """
 
