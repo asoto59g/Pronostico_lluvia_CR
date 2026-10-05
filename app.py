@@ -253,8 +253,8 @@ if btn_ejecutar:
             lat, lon = row['Latitud'], row['Longitud']
             precip_ecmwf, precip_gfs = 0.0, 0.0
             
+            # 1. Consulta independiente para ECMWF (Endpoint dedicado)
             try:
-                # 1. Consulta al endpoint oficial dedicado de ECMWF (Alta resolución nativa)
                 url_ecmwf = (
                     f"https://api.open-meteo.com/v1/ecmwf?"
                     f"latitude={lat}&longitude={lon}"
@@ -263,12 +263,13 @@ if btn_ejecutar:
                 req_e = urllib.request.Request(url_ecmwf, headers={'User-Agent': 'Mozilla/5.0'})
                 with urllib.request.urlopen(req_e, timeout=10) as response_e:
                     data_e = json.loads(response_e.read().decode())
-                    precip_ecmwf = sum([p for p in data_e.get('daily', {}).get('precipitation_sum', []) if p is not None])
+                    p_list_e = data_e.get('daily', {}).get('precipitation_sum', [])
+                    precip_ecmwf = sum([p for p in p_list_e if p is not None])
             except Exception:
                 pass
 
+            # 2. Consulta independiente para GFS (Endpoint general con modelo específico)
             try:
-                # 2. Consulta al endpoint general para el modelo GFS Global
                 url_gfs = (
                     f"https://api.open-meteo.com/v1/forecast?"
                     f"latitude={lat}&longitude={lon}"
@@ -278,7 +279,10 @@ if btn_ejecutar:
                 req_g = urllib.request.Request(url_gfs, headers={'User-Agent': 'Mozilla/5.0'})
                 with urllib.request.urlopen(req_g, timeout=10) as response_g:
                     data_g = json.loads(response_g.read().decode())
-                    precip_gfs = sum([p for p in data_g.get('daily', {}).get('precipitation_sum_gfs_global', []) if p is not None])
+                    daily_g = data_g.get('daily', {})
+                    # Respaldo robusto para capturar la llave sin importar el formato devuelto
+                    p_list_g = daily_g.get('precipitation_sum_gfs_global', daily_g.get('precipitation_sum', []))
+                    precip_gfs = sum([p for p in p_list_g if p is not None])
             except Exception:
                 pass
                 
