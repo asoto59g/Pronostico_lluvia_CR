@@ -232,7 +232,7 @@ with st.container():
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ==========================================
-# LÓGICA PRINCIPAL (INTACTA)
+# LÓGICA PRINCIPAL
 # ==========================================
 if btn_ejecutar:
     with st.spinner(f"Consultando la API para {dias_input} días y calculando la interpolación IDW..."):
@@ -251,23 +251,38 @@ if btn_ejecutar:
 
         def obtener_pronostico(row):
             lat, lon = row['Latitud'], row['Longitud']
+            precip_ecmwf, precip_gfs = 0.0, 0.0
+            
             try:
-                url = (
+                # 1. Consulta al endpoint oficial dedicado de ECMWF (Alta resolución nativa)
+                url_ecmwf = (
+                    f"https://api.open-meteo.com/v1/ecmwf?"
+                    f"latitude={lat}&longitude={lon}"
+                    f"&daily=precipitation_sum&forecast_days={DIAS}&timezone=America%2FCosta_Rica"
+                )
+                req_e = urllib.request.Request(url_ecmwf, headers={'User-Agent': 'Mozilla/5.0'})
+                with urllib.request.urlopen(req_e, timeout=10) as response_e:
+                    data_e = json.loads(response_e.read().decode())
+                    precip_ecmwf = sum([p for p in data_e.get('daily', {}).get('precipitation_sum', []) if p is not None])
+            except Exception:
+                pass
+
+            try:
+                # 2. Consulta al endpoint general para el modelo GFS Global
+                url_gfs = (
                     f"https://api.open-meteo.com/v1/forecast?"
                     f"latitude={lat}&longitude={lon}"
-                    f"&daily=precipitation_sum&models=ecmwf_ifs025,gfs_seamless"
+                    f"&daily=precipitation_sum&models=gfs_global"
                     f"&forecast_days={DIAS}&timezone=America%2FCosta_Rica"
                 )
-                req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-                with urllib.request.urlopen(req, timeout=10) as response:
-                    data = json.loads(response.read().decode())
-                    
-                precip_ecmwf = sum([p for p in data['daily'].get('precipitation_sum_ecmwf_ifs025', []) if p is not None])
-                precip_gfs = sum([p for p in data['daily'].get('precipitation_sum_gfs_seamless', []) if p is not None])
-                
-                return round(precip_ecmwf, 1), round(precip_gfs, 1)
+                req_g = urllib.request.Request(url_gfs, headers={'User-Agent': 'Mozilla/5.0'})
+                with urllib.request.urlopen(req_g, timeout=10) as response_g:
+                    data_g = json.loads(response_g.read().decode())
+                    precip_gfs = sum([p for p in data_g.get('daily', {}).get('precipitation_sum_gfs_global', []) if p is not None])
             except Exception:
-                return 0.0, 0.0
+                pass
+                
+            return round(precip_ecmwf, 1), round(precip_gfs, 1)
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
             resultados = list(executor.map(obtener_pronostico, [row for _, row in df_est.iterrows()]))
